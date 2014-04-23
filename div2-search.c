@@ -6,7 +6,7 @@
 
 unsigned div2_search_iteration_count = 0;
 
-int div2_search_free_position(const unsigned size)
+int div2_search_free_position(const int id, const unsigned size)
 {
     // Диапазон поиска: [l,r)
     unsigned  l = 0;     // Ограничение слева
@@ -19,7 +19,7 @@ int div2_search_free_position(const unsigned size)
 
     while (r != l)
     {
-        if ( div2_search_is_data(c) )
+        if ( div2_search_is_data(id, c) )
         {
             l = c + 1;
         }

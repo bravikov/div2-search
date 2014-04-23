@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
     if (free_position_specify)
     {
         printf("free position = %i; test...\n", free_position);
-        int result = div2_search_free_position(size);
+        int result = div2_search_free_position(0, size);
         if (result == free_position)
             printf(" ok, ");
         else
@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
     
     for(free_position = 0; free_position < size; free_position++)
     {
-        int result = div2_search_free_position(size);
+        int result = div2_search_free_position(0, size);
         if (result == free_position)
             printf(" ok, ");
         else
@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-bool div2_search_is_data(const unsigned position)
+bool div2_search_is_data(const int id, const unsigned position)
 {
     if (position < free_position)
         return true;

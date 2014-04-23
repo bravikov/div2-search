@@ -15,10 +15,11 @@
 extern unsigned div2_search_iteration_count;
 
 // Возвращает true, если удалось обнаружить данные в позиции position.
-bool div2_search_is_data(const unsigned position);
+bool div2_search_is_data(const int id, const unsigned position);
 
 // Возвращает: свободную позицию; -1, если size = 0; size, если нет свободной.
-int div2_search_free_position(const unsigned size);
+// id используется для его передачи в функцию div2_search_is_data().
+int div2_search_free_position(const int id, const unsigned size);
 
 
 #endif //DIV2_SEARCH_H
